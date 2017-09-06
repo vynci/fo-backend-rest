@@ -26,7 +26,30 @@ exports.create = function(req, res) {
 }
 
 exports.get = function(req, res) {
-	SensorLog.find(function(err, result) {
+	var filter = {};
+	console.log(req.query.limit);
+
+	if(req.query.filter){
+		filter = JSON.parse(req.query.filter);
+	}	
+
+	SensorLog.find(filter, function(err, result) {
+		obj.data = result;
+		res.send(obj);
+	})
+	.limit(parseInt(req.query.limit) || 10)
+	.skip(parseInt(req.query.skip) || 0);
+}
+
+exports.count = function(req, res) {
+	var filter = {};
+	console.log(req.query.limit);
+
+	if(req.query.filter){
+		filter = JSON.parse(req.query.filter);
+	}	
+
+	SensorLog.count(filter, function(err, result) {
 		obj.data = result;
 		res.send(obj);
 	});

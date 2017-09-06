@@ -47,6 +47,7 @@ app.delete('/v1/api/widget-setting/:id', widgetSettingAPI.deleteItem);
 
 app.post('/v1/api/sensor-log', sensorLogAPI.create);
 app.get('/v1/api/sensor-log/', sensorLogAPI.get);
+app.get('/v1/api/sensor-log-count/', sensorLogAPI.count);
 app.put('/v1/api/sensor-log/:id', sensorLogAPI.update);
 app.delete('/v1/api/sensor-log/:id', sensorLogAPI.deleteItem);
 
