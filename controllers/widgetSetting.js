@@ -34,6 +34,13 @@ exports.get = function(req, res) {
 	});
 }
 
+exports.getByWidgetId = function(req, res) {
+	WidgetSetting.findOne({widgetId: req.params.id}, function(err, result) {
+		obj.data = result;
+		res.send(obj);
+	});
+}
+
 
 exports.update = (function(req, res) {
 	var body = req.body;

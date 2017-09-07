@@ -42,6 +42,7 @@ app.delete('/v1/api/widget/:id', widgetAPI.deleteItem);
 
 app.post('/v1/api/widget-setting', widgetSettingAPI.create);
 app.get('/v1/api/widget-setting/', widgetSettingAPI.get);
+app.get('/v1/api/widget-setting/:id', widgetSettingAPI.getByWidgetId);
 app.put('/v1/api/widget-setting/:id', widgetSettingAPI.update);
 app.delete('/v1/api/widget-setting/:id', widgetSettingAPI.deleteItem);
 
